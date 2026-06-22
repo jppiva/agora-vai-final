@@ -16,15 +16,14 @@ async function main() {
 
     console.log('📦 Inserindo novos registros...');
 
-    await prisma.alunos.createMany({
+    await prisma.Alunos.createMany({
         data: [
-            { nome: 'aluno piva', turma: 'c', materia:'matematica', foto: '' },
-            { nome: 'aluno nunes', turma: 'a', materia:'matematica', foto: '' },
-            { nome: 'aluno henrico', turma: 'a', materia:'matematica', foto: '' },
-            { nome: 'aluno kaike', turma: 'c', materia:'matematica', foto: '' },
-            { nome: 'aluno lucas', turma: 'a', materia:'matematica', foto: '' },
-            { nome: 'aluno luiz', turma: 'a', materia:'matematica', foto: '' },
-
+            { nome: 'aluno piva', turma: 'c', materia: 'matematica', foto: '' },
+            { nome: 'aluno nunes', turma: 'a', materia: 'matematica', foto: '' },
+            { nome: 'aluno henrico', turma: 'a', materia: 'matematica', foto: '' },
+            { nome: 'aluno kaike', turma: 'c', materia: 'matematica', foto: '' },
+            { nome: 'aluno lucas', turma: 'a', materia: 'matematica', foto: '' },
+            { nome: 'aluno luiz', turma: 'a', materia: 'matematica', foto: '' },
         ],
     });
 

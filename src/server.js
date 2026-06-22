@@ -4,9 +4,6 @@ import alunoRoutes from './routes/AlunoRoute.js';
 import { apiKey } from './lib/middlewares/apiKey.js';
 import arquivoRoutes from './routes/arquivoRoute.js';
 
-
-
-
 const app = express();
 const PORT = process.env.PORT || 3001;
 
