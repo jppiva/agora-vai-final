@@ -1,4 +1,4 @@
-import AlunoModel from '../models/alunoModel.js';
+import AlunoModel from '../models/AlunoModel.js';
 
 import {
     upload as uploadStorage,
