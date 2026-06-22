@@ -1,17 +1,12 @@
-import AlunoModel from '../models/AlunoModel.js';
+import AlunoModel from '../models/alunoModel.js';
 
 import {
-
     upload as uploadStorage,
-
     deletar as deletarStorage,
-
 } from '../lib/helpers/arquivoHelper.js';
 
 const uploadArquivo = (tipo) => async (req, res) => {
-
     try {
-
         const { id } = req.params;
 
         if (isNaN(id)) return res.status(400).json({ error: 'ID inválido.' });
@@ -29,19 +24,13 @@ const uploadArquivo = (tipo) => async (req, res) => {
         const data = await aluno.atualizar();
 
         return res.status(200).json({ message: `${tipo} enviado com sucesso!`, url: data[tipo] });
-
     } catch (error) {
-
         return res.status(500).json({ error: `Erro ao fazer upload do ${tipo}.` });
-
     }
-
 };
 
 const buscarArquivo = (tipo) => async (req, res) => {
-
     try {
-
         const { id } = req.params;
 
         if (isNaN(id)) return res.status(400).json({ error: 'ID inválido.' });
@@ -53,19 +42,13 @@ const buscarArquivo = (tipo) => async (req, res) => {
         if (!aluno[tipo]) return res.status(404).json({ error: `Nenhum ${tipo} cadastrado.` });
 
         return res.status(200).json({ url: aluno[tipo] });
-
     } catch (error) {
-
         return res.status(500).json({ error: `Erro ao buscar ${tipo}.` });
-
     }
-
 };
 
 const deletarArquivo = (tipo) => async (req, res) => {
-
     try {
-
         const { id } = req.params;
 
         if (isNaN(id)) return res.status(400).json({ error: 'ID inválido.' });
@@ -83,13 +66,9 @@ const deletarArquivo = (tipo) => async (req, res) => {
         await aluno.atualizar();
 
         return res.status(200).json({ message: `${tipo} removido com sucesso!` });
-
     } catch (error) {
-
         return res.status(500).json({ error: `Erro ao remover ${tipo}.` });
-
     }
-
 };
 
 export const uploadFoto = uploadArquivo('foto');
